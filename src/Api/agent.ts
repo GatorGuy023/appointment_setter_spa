@@ -26,9 +26,11 @@ const requests = {
 
 const User = {
   login: (body: {}) => axios.post('/login', body),
-  getUser: (url: string): Promise<IUser> => requests.get(url)
+  logout: () => axios.get('/logout'),
+  getUser: (iri: string): Promise<IUser> => requests.get(iri)
 };
 
 export default {
-  User
+  User,
+  requests
 };

@@ -21,8 +21,8 @@ const LoginForm = () => {
         password: Yup.string()
           .required()
       })}
-      onSubmit={async (values: ILoginForm, { setSubmitting }) => {
-          await loginUser(values);
+      onSubmit={async (values: ILoginForm, { setErrors }) => {
+          await loginUser(values, setErrors);
       }}
     >
       {({ isSubmitting}) => (
